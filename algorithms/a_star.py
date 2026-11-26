@@ -6,7 +6,7 @@ from puzzle.result import SearchResult
 
 class AStar(BaseSearch):
 
-       def heuristic(self, state: State) -> int:
+    def heuristic(self, state: State) -> int:
         # Distância de Manhattan de cada peça à sua posição final (ignora o vazio).
         # É admissível: cada movimento desloca uma peça em apenas uma casa.
         total = 0
