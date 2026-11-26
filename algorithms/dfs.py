@@ -11,7 +11,7 @@ class DFS(BaseSearch):
         self.depth_limit = depth_limit
 
     def search(self, initial: State) -> SearchResult:
-       stack = [initial]
+        stack = [initial]
         # Menor custo com que cada estado já foi alcançado; permite revisitar
         # um estado apenas se ele surgir por um caminho mais curto.
         best_cost = {initial.tiles: 0}
