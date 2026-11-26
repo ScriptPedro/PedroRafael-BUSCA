@@ -25,7 +25,7 @@ class State:
         return self.tiles.index(0)
 
     def neighbors(self) -> List["State"]:
-         """Retorna os estados filhos válidos a partir deste estado."""
+        """Retorna os estados filhos válidos a partir deste estado."""
         row, col = divmod(self.blank_index, 3)
         blank = row * 3 + col
         children = []
@@ -39,9 +39,8 @@ class State:
                 children.append(State(tuple(tiles), parent=self, action=action, cost=self.cost + 1))
         return children
 
-
     def path(self) -> List["State"]:
-      """Retorna a sequência de estados do estado inicial até este."""
+        """Retorna a sequência de estados do estado inicial até este."""
         sequence = []
         node: Optional["State"] = self
         while node is not None:
@@ -51,7 +50,7 @@ class State:
         return sequence
 
     def actions(self) -> List[str]:
-       """Retorna a sequência de ações do estado inicial até este."""
+        """Retorna a sequência de ações do estado inicial até este."""
         return [state.action for state in self.path() if state.action is not None]
 
     def __eq__(self, other: object) -> bool:
